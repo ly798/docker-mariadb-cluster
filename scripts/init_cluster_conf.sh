@@ -49,3 +49,12 @@ innodb-doublewrite = 1
 innodb-autoinc-lock-mode = 2 
 innodb-flush-log-at-trx-commit = 2 
 EOF
+
+# we create a galera config
+client_config_file="/.my.cnf"
+
+cat <<EOF > $config_file
+[client]
+user=root
+password="$MYSQL_ROOT_PASSWORD"
+EOF
